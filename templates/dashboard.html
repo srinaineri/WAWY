@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard - WAWY</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+<a href="/logout">
+    <button style="position:absolute; top:20px; right:20px;">Logout</button>
+</a>
+<div class="hero">
+
+    <h1>Welcome {{ username }} 👋</h1>
+
+    <p>How are you feeling today?</p>
+    <br>
+
+<a href="/support">
+    <button>Get Support</button>
+    <br><br>
+
+<div class="history-box">
+
+    <h2>📜 Recent Mood History</h2>
+
+    {% if moods %}
+
+        {% for mood in moods %}
+
+            <div class="history-item">
+                <b>{{ mood[0] }}</b><br>
+                {{ mood[1] }}
+            </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>No moods recorded yet.</p>
+
+    {% endif %}
+
+</div>

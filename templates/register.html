@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Register - WAWY</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="hero">
+
+<h1>Create Account ✨</h1>
+
+<p>Join WAWY and start your journey.</p>
+
+<form method="POST" action="/register">
+
+<input
+type="text"
+name="name"
+placeholder="Full Name">
+
+<br><br>
+
+<input
+type="email"
+name="email"
+placeholder="Enter Email">
+
+<br><br>
+
+<input
+type="password"
+name="password"
+placeholder="Create Password">
+
+<br><br>
+
+<input
+type="password"
+placeholder="Confirm Password">
+
+<br><br>
+
+<button type="submit">
+Register
+</button>
+
+</form>
+
+<br>
+
+<p>
+
+Already have an account?
+
+<a href="/login">
+
+Login
+
+</a>
+
+</p>
+
+</div>
+
+</body>
+
+</html>
