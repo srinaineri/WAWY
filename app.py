@@ -110,6 +110,17 @@ def dashboard():
         username=username,
         moods=moods
     )
+@app.route("/chat", methods=["GET", "POST"])
+def chat():
+
+    reply = ""
+
+    if request.method == "POST":
+        message = request.form["message"]
+
+        reply = "You said: " + message
+
+    return render_template("chat.html", reply=reply)
 @app.route("/support")
 def support():
     return render_template("support.html")
